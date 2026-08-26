@@ -1,5 +1,5 @@
 version: 1
-generated_at: 2026-06-15T13:16:38Z
+generated_at: 2026-08-21T11:43:43Z
 internal: []
 trusted:
   - action: actions/checkout
@@ -8,15 +8,23 @@ trusted:
     occurrences:
       ee0669bd1cc54295c223e0bb666b733df41de1c5:
         .github/workflows/elixir.yml:
-          - jobs.test.steps.[0].uses
-external:
-  - action: erlef/setup-beam
-    refs:
-      - fc68ffb90438ef2936bbb3251622353b3dcb2f93
-    occurrences:
-      fc68ffb90438ef2936bbb3251622353b3dcb2f93:
-        .github/workflows/elixir.yml:
           - jobs.test.steps.[1].uses
+external:
+  - action: step-security/harden-runner
+    refs:
+      - 9af89fc71515a100421586dfdb3dc9c984fbf411
+    occurrences:
+      9af89fc71515a100421586dfdb3dc9c984fbf411:
+        .github/workflows/elixir.yml:
+          - jobs.test.steps.[0].uses
+  - action: step-security/mise-action
+    refs:
+      - 2796166110dee826668caddd4bffedae5116e7cd
+    occurrences:
+      2796166110dee826668caddd4bffedae5116e7cd:
+        .github/workflows/elixir.yml:
+          - jobs.test.steps.[2].uses
 local: []
 docker: []
 dynamic: []
+nested_floating_deps: []
